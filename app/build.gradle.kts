@@ -63,7 +63,7 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
-//     Hilt
+    //Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(project(":data"))
