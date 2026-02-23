@@ -1,4 +1,4 @@
-package com.mahmoudroid.cryptocoins.views
+package com.mahmoudroid.cryptocoins.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
