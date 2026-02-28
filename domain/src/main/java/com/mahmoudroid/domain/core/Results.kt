@@ -3,5 +3,5 @@ package com.mahmoudroid.domain.core
 sealed class Results<out T> {
     data class Success<T>(val data: T) : Results<T>()
     data class Failure(val throwable: Throwable) : Results<Nothing>()
-    data class Loading<T>(val data: T? = null) : Results<T>(data)
+    data class Loading<T>(val data: T? = null) : Results<T>()
 }
