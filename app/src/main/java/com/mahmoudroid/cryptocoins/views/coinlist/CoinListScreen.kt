@@ -1,4 +1,4 @@
-package com.mahmoudroid.cryptocoins.views.coinlist.components
+package com.mahmoudroid.cryptocoins.views.coinlist
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.mahmoudroid.cryptocoins.views.Screen
-import com.mahmoudroid.cryptocoins.views.coinlist.CoinListViewModel
+import com.mahmoudroid.cryptocoins.views.coinlist.components.CoinListItem
 
 @Composable
 fun CoinListScreen(
