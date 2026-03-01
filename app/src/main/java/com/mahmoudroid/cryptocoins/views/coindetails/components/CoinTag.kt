@@ -1,4 +1,4 @@
-package com.mahmoudroid.cryptocoins.views.coinlist.components
+package com.mahmoudroid.cryptocoins.views.coindetails.components
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
