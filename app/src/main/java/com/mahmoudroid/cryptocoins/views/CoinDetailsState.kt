@@ -4,6 +4,6 @@ import com.mahmoudroid.domain.model.CoinDetail
 
 class CoinDetailsState(
     val isLoading: Boolean = false,
-    val coins: CoinDetail? = null,
+    val coin: CoinDetail? = null,
     val error: String = ""
 )
