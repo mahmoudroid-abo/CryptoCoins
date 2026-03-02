@@ -11,11 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mahmoudroid.data.remote.dto.TeamMember
+import com.mahmoudroid.domain.model.TeamMembers
 
 @Composable
 fun TeamListItem(
-    teamMember: TeamMember,
+    teamMember: TeamMembers,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -38,7 +38,7 @@ fun TeamListItem(
 @Composable
 fun TeamListItemPreview() {
 
-    val fakeMember = TeamMember(
+    val fakeMember = TeamMembers(
         name = "Mahmoud Ali",
         position = "Android Developer",
         id = "132"

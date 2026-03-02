@@ -36,7 +36,7 @@ class CoinDetailsViewModel @Inject constructor(
             .onEach { result: Results<CoinDetail> ->
                 when (result) {
                     is Results.Success -> {
-                        _state.value = CoinDetailsState(coins = result.data)
+                        _state.value = CoinDetailsState(coin = result.data)
                     }
                     is Results.Failure -> {
                         // update state with result.throwable
