@@ -1,5 +1,6 @@
 package com.mahmoudroid.cryptocoins.views.coindetails
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.FlowRow
@@ -33,7 +34,9 @@ fun CoinDetailsScreen(
     val state = viewModel.state.value
 
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black)
     ) {
         state.coin?.let { coinDetail ->
             LazyColumn(
@@ -93,7 +96,10 @@ fun CoinDetailsScreen(
                 items(coinDetail.team) { teamMember ->
                     TeamListItem(
                         teamMember = teamMember,
-                        modifier = Modifier.fillMaxWidth().padding(10.dp))
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp)
+                    )
                     Divider()
                 }
             }
@@ -112,7 +118,10 @@ fun CoinDetailsScreen(
         }
 
         if (state.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = Color(0xFF4CAF50) // custom green
+            )
         }
     }
 }

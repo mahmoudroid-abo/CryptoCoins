@@ -1,16 +1,16 @@
 package com.mahmoudroid.cryptocoins.views.coinlist
 
-import androidx.lifecycle.ViewModel
-import com.mahmoudroid.domain.usecases.coinsList.GetCoinsUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mahmoudroid.domain.core.Results
 import com.mahmoudroid.domain.model.Coin
+import com.mahmoudroid.domain.usecases.coinsList.GetCoinsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 @HiltViewModel
 class CoinListViewModel @Inject constructor(

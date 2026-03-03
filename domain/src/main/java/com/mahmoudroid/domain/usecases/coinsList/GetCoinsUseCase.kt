@@ -12,6 +12,7 @@ class GetCoinsUseCase @Inject constructor(
     private val repository: CoinRepository) {
     operator fun invoke(): Flow<Results<List<Coin>>> = flow {
         try {
+            emit(Results.Loading())
             val coins = repository.getCoins()
             emit(Results.Success(coins))
         } catch (e: IOException) {
