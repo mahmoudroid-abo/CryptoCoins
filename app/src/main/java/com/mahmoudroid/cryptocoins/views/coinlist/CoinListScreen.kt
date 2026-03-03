@@ -1,5 +1,6 @@
 package com.mahmoudroid.cryptocoins.views.coinlist
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import androidx.navigation.NavController
 import com.mahmoudroid.cryptocoins.views.Screen
 import com.mahmoudroid.cryptocoins.views.coinlist.components.CoinListItem
 
+private const val TAG = "CoinListScreen"
 @Composable
 fun CoinListScreen(
     navController: NavController,
@@ -30,7 +32,9 @@ fun CoinListScreen(
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        LazyColumn(modifier = Modifier.fillMaxSize().background(Color.Black)) {
+        LazyColumn(modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black)) {
             items(state.coins) { coin ->
                 CoinListItem(coin = coin, onItemClick = {
                     navController.navigate(Screen.CoinDetailsScreen.route + "/${coin.id}")
@@ -51,7 +55,10 @@ fun CoinListScreen(
         }
 
         if (state.isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = Color(0xFF4CAF50) // custom green
+            )
         }
     }
 }
