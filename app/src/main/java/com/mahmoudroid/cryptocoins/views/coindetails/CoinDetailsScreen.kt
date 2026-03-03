@@ -22,15 +22,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mahmoudroid.cryptocoins.views.CoinDetailsState
 import com.mahmoudroid.cryptocoins.views.coindetails.components.CoinTag
 import com.mahmoudroid.cryptocoins.views.coindetails.components.TeamListItem
-import com.mahmoudroid.data.remote.dto.TeamMember
-import com.mahmoudroid.domain.model.CoinDetail
-import com.mahmoudroid.domain.model.TeamMembers
 
 @Composable
 fun CoinDetailsScreen(
