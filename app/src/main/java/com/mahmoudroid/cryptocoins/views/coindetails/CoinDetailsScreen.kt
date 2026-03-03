@@ -22,10 +22,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.mahmoudroid.cryptocoins.views.CoinDetailsState
 import com.mahmoudroid.cryptocoins.views.coindetails.components.CoinTag
 import com.mahmoudroid.cryptocoins.views.coindetails.components.TeamListItem
+import com.mahmoudroid.data.remote.dto.TeamMember
+import com.mahmoudroid.domain.model.CoinDetail
+import com.mahmoudroid.domain.model.TeamMembers
 
 @Composable
 fun CoinDetailsScreen(
@@ -35,8 +40,7 @@ fun CoinDetailsScreen(
 
     Box(
         modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
+            .fillMaxSize().background(Color.Black)
     ) {
         state.coin?.let { coinDetail ->
             LazyColumn(
@@ -51,7 +55,8 @@ fun CoinDetailsScreen(
                         Text(
                             text = "${coinDetail.rank}. ${coinDetail.name} (${coinDetail.symbol})",
                             style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.weight(8f)
+                            modifier = Modifier.weight(8f),
+                            color = Color.White
                         )
 
                         Text(
@@ -69,6 +74,7 @@ fun CoinDetailsScreen(
                     Text(
                         text = coinDetail.description,
                         style = MaterialTheme.typography.bodyMedium,
+                        color = Color.White
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
@@ -79,7 +85,7 @@ fun CoinDetailsScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     FlowRow(
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                        verticalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         coinDetail.tags.forEach { tag ->
                             CoinTag(tag = tag)
@@ -124,4 +130,5 @@ fun CoinDetailsScreen(
             )
         }
     }
+
 }
