@@ -35,8 +35,7 @@ fun CoinDetailsScreen(
 
     Box(
         modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
+            .fillMaxSize().background(Color.Black)
     ) {
         state.coin?.let { coinDetail ->
             LazyColumn(
@@ -51,7 +50,8 @@ fun CoinDetailsScreen(
                         Text(
                             text = "${coinDetail.rank}. ${coinDetail.name} (${coinDetail.symbol})",
                             style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.weight(8f)
+                            modifier = Modifier.weight(8f),
+                            color = Color.White
                         )
 
                         Text(
@@ -69,6 +69,7 @@ fun CoinDetailsScreen(
                     Text(
                         text = coinDetail.description,
                         style = MaterialTheme.typography.bodyMedium,
+                        color = Color.White
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
@@ -79,7 +80,7 @@ fun CoinDetailsScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     FlowRow(
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                        verticalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         coinDetail.tags.forEach { tag ->
                             CoinTag(tag = tag)
@@ -124,4 +125,5 @@ fun CoinDetailsScreen(
             )
         }
     }
+
 }

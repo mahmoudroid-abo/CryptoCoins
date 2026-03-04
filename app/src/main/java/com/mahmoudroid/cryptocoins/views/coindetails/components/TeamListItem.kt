@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mahmoudroid.domain.model.TeamMembers
@@ -24,12 +25,14 @@ fun TeamListItem(
     ) {
         Text(
             text = teamMember.name,
-            style = MaterialTheme.typography.bodyMedium
+            style = MaterialTheme.typography.bodyMedium,
+            color = Color.White
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = teamMember.position,
-            style = MaterialTheme.typography.bodySmall
+            style = MaterialTheme.typography.bodySmall,
+            color = Color.White
         )
     }
 }
