@@ -1,6 +1,6 @@
 package com.mahmoudroid.cryptocoins.di
 
-import com.mahmoudroid.cryptocoins.common.Constants
+import com.mahmoudroid.cryptocoins.BuildConfig
 import com.mahmoudroid.data.remote.CoinPaprikaApi
 import com.mahmoudroid.data.remote.LoggingInterceptor
 import com.mahmoudroid.data.repositoryImpl.CoinRepositoryImpl
@@ -15,7 +15,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -24,7 +23,7 @@ object AppModule {
     @Singleton
     fun providePaprikaApi(okHttpClient: OkHttpClient): CoinPaprikaApi {
         return Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
